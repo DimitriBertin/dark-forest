@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { AuthLayout, Layout } from './components'
+import { Layout } from './components'
+import { UserProvider } from './contextes/user-context'
 
 function App(): JSX.Element {
-  const [userConnected, setUserConnected] = useState<boolean>(false)
-
   return (
     <div className="App">
-      <Router>{userConnected ? <Layout /> : <AuthLayout />}</Router>
+      <UserProvider>
+        <Layout />
+      </UserProvider>
     </div>
   )
 }
