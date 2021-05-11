@@ -7,15 +7,7 @@ import { AuthLayout } from './..'
 function Layout({}: LayoutProps): JSX.Element {
   const { state } = useContext(UserContext)
 
-  return state.isConnected ? (
-    <div className={Style}>
-      <header role="banner">Un super header de layout</header>
-      <main>Un super layout</main>
-      <footer>Un super footer de layout</footer>
-    </div>
-  ) : (
-    <AuthLayout />
-  )
+  return state.isConnected ? <div className={Style} /> : <AuthLayout />
 }
 
 export default Layout
