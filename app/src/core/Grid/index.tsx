@@ -76,9 +76,11 @@ const gridBaseCol: StyleReducerType = Object.keys(breakpoints).reduce<StyleReduc
     nObj[`.${breakpoint}-${key.replace('.', '')}`] = base[key]
   }
 
-  acc[`@media all (min-width: ${breakpoints[breakpoint]}px)`] = nObj
+  acc[`@media (min-width: ${breakpoints[breakpoint]}px)`] = nObj
   return acc
 }, {})
+
+console.log(gridBaseCol)
 
 function Grid(): JSX.Element {
   return <Global styles={css([base, baseCol, gridBaseCol])} />
