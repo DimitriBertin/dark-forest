@@ -5,3 +5,7 @@ export type BasicStyleType = {
 export type BreakpointType = {
   [key: string]: number
 }
+
+export type ColorsType = {
+  [key: string]: string
+}

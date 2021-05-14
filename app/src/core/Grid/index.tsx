@@ -80,8 +80,6 @@ const gridBaseCol: StyleReducerType = Object.keys(breakpoints).reduce<StyleReduc
   return acc
 }, {})
 
-console.log(gridBaseCol)
-
 function Grid(): JSX.Element {
   return <Global styles={css([base, baseCol, gridBaseCol])} />
 }

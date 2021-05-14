@@ -1,7 +1,7 @@
 import Grid from './Grid'
 import Base from './Base'
 
-function ComputedStyle() {
+function ComputedStyle(): JSX.Element {
   return (
     <>
       <Grid />
