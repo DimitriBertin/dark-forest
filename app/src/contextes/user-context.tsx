@@ -1,11 +1,11 @@
 import React from 'react'
 
 type UserType = {
+  uid: string | null
   displayName: string | null
   email: string | null
   phone?: string | null
   isConnected: boolean
-  date_last: number | null
 }
 
 type ContextType = {
@@ -14,25 +14,29 @@ type ContextType = {
 }
 
 // type Action = | { type: 'IS_CONNECTED' }
-type Action = { type: 'IS_CONNECTED' }
+type Action = {
+  type: 'IS_CONNECTED'
+  payload: Partial<UserType>
+}
 
 const defaultTheme: UserType = {
+  uid: null,
   displayName: null,
   email: null,
   phone: null,
   isConnected: false,
-  date_last: null,
 }
 
 export const UserContext = React.createContext<ContextType>({ state: defaultTheme, dispatch: () => undefined })
 
 function updateUser(state: UserType, action: Action): UserType {
-  const { type } = action
+  const { type, payload } = action
+  console.log('payload', payload)
   switch (type) {
     case 'IS_CONNECTED':
       return {
         ...state,
-        date_last: Date.now(),
+        ...payload,
         isConnected: true,
       }
     default:
