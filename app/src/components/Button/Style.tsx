@@ -13,6 +13,9 @@ const Style = (theme: string): string =>
       padding: `${toRem(10)} ${toRem(20)}`,
       background: Colors[theme],
       color: Colors.white,
+      '.icon': {
+        marginRight: toRem(10),
+      },
     },
     theme === 'border' && {
       background: 'none',

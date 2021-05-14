@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import Style from './Style'
-import { Title, DefaultLink } from './../../../core/Typo'
-import { Field, Button } from './../../../components'
-import ButtonStyle from './../../../components/Button/Style'
+import { Title } from '../../../core/Typo'
+import { Field, Button } from '../../../components'
+import ButtonStyle from '../../../components/Button/Style'
 import { MouseEvent, useState } from 'react'
 
-function Login(): JSX.Element {
+function ForgotPassword(): JSX.Element {
   const [wait, setWait] = useState<boolean>(false)
 
   const logIn = (e: MouseEvent) => {
@@ -15,11 +15,11 @@ function Login(): JSX.Element {
   }
 
   return (
-    <div className={`login flex flex-col justify-center ${Style}`}>
+    <div className={`forgot-password flex flex-col justify-center ${Style}`}>
       <div className="row">
         <div className="offset-1 col-10">
           <p>DarkForest | votre gestionnaire de factures</p>
-          <h1 className={Title}>Connectez-vous</h1>
+          <h1 className={Title}>Vous avez oublié votre mot de passe ? No panic</h1>
           <form>
             <Field
               type="email"
@@ -30,26 +30,14 @@ function Login(): JSX.Element {
               placeholder="Email: noname@darkforest.fr"
               disabledLabel
             />
-            <Field
-              type="password"
-              name="login[password]"
-              value=""
-              id="login[password]"
-              label="Votre mot de passe"
-              placeholder="Mot de passe"
-              disabledLabel
-            />
             <input type="hidden" name="login[token]" id="login[token]" defaultValue="" />
             <Button type="submit" handleClick={logIn} wait={wait}>
-              <span>Connexion</span>
+              <span>Retrouvez mon mot de passe</span>
             </Button>
           </form>
           <div className="flex flex-col items-center login__bottom">
-            <Link to="/forgot-password" className={DefaultLink}>
-              Vous avez oublié votre mot de passe ?
-            </Link>
-            <Link to="/register" className={`login__register ${ButtonStyle('border')}`}>
-              Pas encore inscrit ?
+            <Link to="/login" className={`login__register ${ButtonStyle('border')}`}>
+              Revenir à la connexion
             </Link>
           </div>
         </div>
@@ -58,4 +46,4 @@ function Login(): JSX.Element {
   )
 }
 
-export default Login
+export default ForgotPassword

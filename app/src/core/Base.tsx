@@ -33,6 +33,10 @@ const Style: BasicStyleType = {
   '.h-full': {
     height: '100vh',
   },
+  '.mx-auto': {
+    marginRight: 'auto',
+    marginLeft: 'auto',
+  },
 }
 
 function Base(): JSX.Element {

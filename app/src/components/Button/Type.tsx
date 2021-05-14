@@ -4,5 +4,6 @@ export interface ButtonProps {
   children: React.ReactChild
   type: 'button' | 'submit'
   handleClick: MouseEventHandler
-  theme?: string
+  theme?: string,
+  wait?: boolean,
 }
