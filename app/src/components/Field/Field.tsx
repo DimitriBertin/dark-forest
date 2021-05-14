@@ -10,7 +10,7 @@ import Field from '.'
 
 describe('Field', () => {
   it('should render Field with minimum props', () => {
-    const component = shallow(<Field type='text' value='' label='Votre email' id='input-email' name='email' />)
+    const component = shallow(<Field type='text' value='' label='Votre email' id='input-email' name='email' handleChange={(value) => console.log(value)} />)
 
     expect(component).toMatchSnapshot()
   });

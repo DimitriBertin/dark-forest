@@ -29,6 +29,7 @@ function Login(): JSX.Element {
               label="Votre email"
               placeholder="Email: noname@darkforest.fr"
               disabledLabel
+              handleChange={(value) => console.log(value)}
             />
             <Field
               type="password"
@@ -38,6 +39,7 @@ function Login(): JSX.Element {
               label="Votre mot de passe"
               placeholder="Mot de passe"
               disabledLabel
+              handleChange={(value) => console.log(value)}
             />
             <input type="hidden" name="login[token]" id="login[token]" defaultValue="" />
             <Button type="submit" handleClick={logIn} wait={wait}>

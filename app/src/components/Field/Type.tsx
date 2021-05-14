@@ -1,3 +1,5 @@
+import { ChangeEventHandler } from 'react'
+
 export interface FieldProps {
   type: string
   value: string
@@ -6,4 +8,5 @@ export interface FieldProps {
   name: string
   disabledLabel?: boolean
   placeholder?: string
+  handleChange: (value: string) => void
 }

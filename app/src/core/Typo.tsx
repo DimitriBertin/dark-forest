@@ -17,3 +17,9 @@ export const DefaultLink = css({
   fontSize: toRem(12),
   color: Colors.primary,
 })
+
+export const Error = css({
+  color: Colors.red,
+  fontSize: toRem(12),
+  fontFamily: Fonts.title,
+})

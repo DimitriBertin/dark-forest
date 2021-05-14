@@ -3,6 +3,8 @@ import { UserProvider } from './contextes/user-context'
 import WebFont from 'webfontloader'
 import { useEffect } from 'react'
 import ComputedStyle from './core/ComputedStyle'
+import { initializeApp } from 'firebase/app'
+import { config } from './services/Firebase'
 
 function App(): JSX.Element {
   useEffect(() => {
@@ -11,6 +13,8 @@ function App(): JSX.Element {
         families: ['Cutive Mono', 'Newsreader:200'],
       },
     })
+
+    initializeApp(config)
   }, [])
 
   return (
