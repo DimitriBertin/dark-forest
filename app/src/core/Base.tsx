@@ -37,6 +37,10 @@ const Style: BasicStyleType = {
     marginRight: 'auto',
     marginLeft: 'auto',
   },
+  '.list-reset': {
+    padding: 0,
+    listStyle: 'none',
+  },
 }
 
 function Base(): JSX.Element {

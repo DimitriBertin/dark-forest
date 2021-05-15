@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Style from './Style'
 import { Title, DefaultLink } from './../../../core/Typo'
-import { Field, Button } from './../../../components'
+import { Field, Button, Logo } from './../../../components'
 import ButtonStyle from './../../../components/Button/Style'
 import { MouseEvent, useState } from 'react'
 
@@ -18,7 +18,7 @@ function Login(): JSX.Element {
     <div className={`login flex flex-col justify-center ${Style}`}>
       <div className="row">
         <div className="offset-1 col-10">
-          <p>DarkForest | votre gestionnaire de factures</p>
+          <Logo />
           <h1 className={Title}>Connectez-vous</h1>
           <form>
             <Field

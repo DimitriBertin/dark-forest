@@ -4,9 +4,8 @@ import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../contextes/user-context'
 import { AuthLayout } from './..'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import { LoaderIcon } from '../Icons'
-import Colors from '../../core/Colors'
 import Intro from './Intro'
+import Header from './Header'
 
 function Layout({}: LayoutProps): JSX.Element {
   const { state, dispatch } = useContext(UserContext)
@@ -31,7 +30,15 @@ function Layout({}: LayoutProps): JSX.Element {
     })
   }, [])
 
-  return loading ? <Intro /> : state.isConnected ? <div className={Style}>HERE</div> : <AuthLayout />
+  return loading ? (
+    <Intro />
+  ) : state.isConnected ? (
+    <div className={Style}>
+      <Header />
+    </div>
+  ) : (
+    <AuthLayout />
+  )
 }
 
 export default Layout

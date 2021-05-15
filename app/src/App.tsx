@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import ComputedStyle from './core/ComputedStyle'
 import { initializeApp } from 'firebase/app'
 import { config } from './services/Firebase'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 initializeApp(config)
 
@@ -20,8 +21,10 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <UserProvider>
-        <ComputedStyle />
-        <Layout />
+        <Router>
+          <ComputedStyle />
+          <Layout />
+        </Router>
       </UserProvider>
     </div>
   )

@@ -1,7 +1,6 @@
 import { ButtonProps } from './Type'
 import Style from './Style'
 import { LoaderIcon } from './../Icons'
-// import Colors from '../../core/Colors'
 
 function Button({ children, type, handleClick, theme = 'primary', wait }: ButtonProps): JSX.Element {
   return (
